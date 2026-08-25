@@ -1,1 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="GetRightCollective — Quality. Culture. Community."
+  >
+
+  <title>GRC — GetRightCollective</title>
+
+  <style>
+    /* =========================================
+       GRC — GET RIGHT COLLECTIVE
+       PREMIUM RESPONSIVE WEBSITE
+       ========================================= */
+
+    :root {
+      --black: #050505;
+      --white: #f7f7f7;
+      --gray: #9a9a9a;
+      --dark-gray: #151515;
+      --border: rgba(255,255,255,.12);
+      --max-width: 1400px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================================
+       NAVIGATION
+       ========================================= */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      padding:
+        max(18px, env(safe-area-inset-top))
+        24px
+        18px;
+
+      background: rgba(5,5,5,.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: .25em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: .72;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .menu-button {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: transparent;
+      color: white;
+
+      cursor: pointer;
+    }
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        150px 24px
+        80px;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 700px;
+      height: 700px;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      background: radial-gradient(
+        circle,
+        rgba(255,255,255,.08),
+        transparent 65%
+      );
+
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: auto;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gray);
+
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(64px, 11vw, 180px);
+      line-height: .82;
+      letter-spacing: -.055em;
+      font-weight: 900;
+
+      max-width: 1200px;
+
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-title .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--white);
+    }
+
+    .hero-bottom {
+      margin-top: 55px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .hero-description {
+      max-width: 450px;
+
+      font-size: 16px;
+      line-height: 1.6;
+
+      color: var(--gray);
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 190px;
+      height: 58px;
+
+      padding: 0 28px;
+
+      background: var(--white);
+      color: var(--black);
+
+      border: none;
+
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition:
+        transform .25s ease,
+        background .25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-4px);
+    }
+
+    /* =========================================
+       MARQUEE
+       ========================================= */
+
+    .marquee {
+      overflow: hidden;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      padding: 22px 0;
+
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee span {
+      margin-right: 45px;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: .3em;
+      text-transform: uppercase;
+
+      color: var(--gray);
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =========================================
+       GENERAL SECTIONS
+       ========================================= */
+
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: auto;
+
+      padding:
+        130px 24px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+
+      color: var(--gray);
+
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: clamp(45px, 8vw, 100px);
+      line-height: .9;
+
+      letter-spacing: -.05em;
+
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       ABOUT
+       ========================================= */
+
+    .about-grid {
+      margin-top: 70px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+    }
+
+    .about-large {
+      font-size: clamp(25px, 3vw, 42px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+
+    .about-text {
+      max-width: 520px;
+
+      color: var(--gray);
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       PRODUCTS
+       ========================================= */
+
+    .products-grid {
+      margin-top: 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 16px;
+    }
+
+    .product {
+      min-height: 430px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #1a1a1a,
+          #080808
+        );
+
+      border: 1px solid var(--border);
+
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,.35);
+    }
+
+    .product-number {
+      color: var(--gray);
+
+      font-size: 11px;
+      letter-spacing: .2em;
+    }
+
+    .product-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 230px;
+
+      font-size: 65px;
+      font-weight: 900;
+      letter-spacing: -.08em;
+    }
+
+    .product-name {
+      font-size: 22px;
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      margin-top: 8px;
+
+      color: var(--gray);
+
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       MANIFESTO
+       ========================================= */
+
+    .manifesto {
+      min-height: 80svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .manifesto h2 {
+      max-width: 1100px;
+
+      font-size: clamp(50px, 9vw, 130px);
+      line-height: .88;
+
+      letter-spacing: -.06em;
+
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .manifesto h2 span {
+      color: var(--gray);
+    }
+
+    /* =========================================
+       CONTACT
+       ========================================= */
+
+    .contact {
+      min-height: 70svh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-title {
+      font-size: clamp(55px, 10vw, 150px);
+      line-height: .85;
+
+      letter-spacing: -.06em;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .contact-bottom {
+      margin-top: 60px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .contact-email {
+      font-size: clamp(20px, 3vw, 35px);
+      font-weight: 700;
+    }
+
+    .contact-note {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+
+      padding:
+        40px 24px
+        calc(40px + env(safe-area-inset-bottom));
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: .25em;
+    }
+
+    .footer-copy {
+      color: var(--gray);
+
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+        left: 18px;
+        right: 18px;
+
+        padding: 22px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        background: rgba(10,10,10,.96);
+
+        border: 1px solid var(--border);
+
+        backdrop-filter: blur(20px);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 17px 5px;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        min-height: 100svh;
+
+        padding:
+          145px 20px
+          60px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: .22em;
+        margin-bottom: 25px;
+      }
+
+      .hero-title {
+        /*
+          THIS is what keeps GET RIGHT / STAY RIGHT
+          inside the phone screen.
+        */
+
+        font-size: clamp(55px, 18vw, 95px);
+
+        line-height: .88;
+
+        letter-spacing: -.065em;
+
+        max-width: 100%;
+
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      .hero-title .outline {
+        -webkit-text-stroke: 1px var(--white);
+      }
+
+      .hero-bottom {
+        margin-top: 38px;
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .hero-button {
+        width: 100%;
+      }
+
+      .section {
+        padding:
+          90px 20px;
+      }
+
+      .section-title {
+        font-size: clamp(48px, 15vw, 80px);
+      }
+
+      .about-grid {
+        margin-top: 45px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .about-large {
+        font-size: 26px;
+      }
+
+      .about-text {
+        font-size: 14px;
+      }
+
+      .products-grid {
+        margin-top: 45px;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+      .product {
+        min-height: 360px;
+      }
+
+      .product-art {
+        min-height: 180px;
+        font-size: 55px;
+      }
+
+      .manifesto {
+        min-height: 70svh;
+
+        padding: 80px 20px;
+      }
+
+      .manifesto h2 {
+        font-size: clamp(48px, 14vw, 75px);
+      }
+
+      .contact {
+        min-height: 65svh;
+      }
+
+      .contact-title {
+        font-size: clamp(55px, 17vw, 95px);
+      }
+
+      .contact-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-top: 40px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* =========================================
+       VERY SMALL PHONES
+       ========================================= */
+
+    @media (max-width: 380px) {
+
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero-title {
+        font-size: 17vw;
+      }
+
+      .section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* =========================================
+       REDUCE MOTION
+       ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .marquee-track {
+        animation: none;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================================
+       NAVIGATION
+       ====================================== -->
+
+  <header class="nav">
+
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        GRC
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#products">Products</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       HERO
+       ====================================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-inner">
+
+        <div class="eyebrow">
+          GETRIGHTCOLLECTIVE
+        </div>
+
+        <h1 class="hero-title">
+
+          <span>GET</span>
+
+          <span class="outline">
+            RIGHT.
+          </span>
+
+          <span>
+            STAY
+          </span>
+
+          <span class="outline">
+            RIGHT.
+          </span>
+
+        </h1>
+
+        <div class="hero-bottom">
+
+          <p class="hero-description">
+            QUALITY · CULTURE · COMMUNITY
+            <br><br>
+            GetRightCollective is a creative brand
+            built around culture, creativity and
+            the GRC movement.
+          </p>
+
+          <a
+            href="#products"
+            class="hero-button"
+          >
+            Explore GRC
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         MARQUEE
+         ====================================== -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <span>GET RIGHT</span>
+        <span>STAY RIGHT</span>
+        <span>GRC</span>
+        <span>QUALITY</span>
+        <span>CULTURE</span>
+        <span>COMMUNITY</span>
+
+        <span>GET RIGHT</span>
+        <span>STAY RIGHT</span>
+        <span>GRC</span>
+        <span>QUALITY</span>
+        <span>CULTURE</span>
+        <span>COMMUNITY</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ======================================
+         ABOUT
+         ====================================== -->
+
+    <section class="section" id="about">
+
+      <div class="section-label">
+        01 — About
+      </div>
+
+      <h2 class="section-title">
+        ABOUT<br>
+        GRC
+      </h2>
+
+      <div class="about-grid">
+
+        <div class="about-large">
+          A CREATIVE MOVEMENT BUILT
+          AROUND CULTURE, IDENTITY
+          AND THE PEOPLE WHO GET IT.
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            GetRightCollective is a creative brand
+            focused on culture, design and community.
+          </p>
+
+          <br>
+
+          <p>
+            GRC represents the mindset of getting
+            right, staying right and moving forward.
+          </p>
+
+          <br>
+
+          <p>
+            This is more than a logo.
+            It's a collective.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PRODUCTS
+         ====================================== -->
+
+    <section class="section" id="products">
+
+      <div class="section-label">
+        02 — Collection
+      </div>
+
+      <h2 class="section-title">
+        GRC<br>
+        PRODUCTS
+      </h2>
+
+      <div class="products-grid">
+
+        <article class="product">
+
+          <div class="product-number">
+            001
+          </div>
+
+          <div class="product-art">
+            GRC
+          </div>
+
+          <div>
+
+            <div class="product-name">
+              GRC Essentials
+            </div>
+
+            <div class="product-info">
+              Coming Soon
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product">
+
+          <div class="product-number">
+            002
+          </div>
+
+          <div class="product-art">
+            GR
+          </div>
+
+          <div>
+
+            <div class="product-name">
+              Get Right
+            </div>
+
+            <div class="product-info">
+              Coming Soon
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product">
+
+          <div class="product-number">
+            003
+          </div>
+
+          <div class="product-art">
+            SR
+          </div>
+
+          <div>
+
+            <div class="product-name">
+              Stay Right
+            </div>
+
+            <div class="product-info">
+              Coming Soon
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         MANIFESTO
+         ====================================== -->
+
+    <section class="manifesto">
+
+      <h2>
+
+        GET RIGHT.<br>
+
+        <span>
+          STAY RIGHT.
+        </span>
+
+      </h2>
+
+    </section>
+
+
+    <!-- ======================================
+         CONTACT
+         ====================================== -->
+
+    <section class="section contact" id="contact">
+
+      <div class="section-label">
+        03 — Contact
+      </div>
+
+      <h2 class="contact-title">
+        LET'S<br>
+        CONNECT.
+      </h2>
+
+      <div class="contact-bottom">
+
+        <a
+          href="mailto:hello@getrightcollective.com"
+          class="contact-email"
+        >
+          hello@getrightcollective.com
+        </a>
+
+        <p class="contact-note">
+          GRC — GETRIGHTCOLLECTIVE
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       FOOTER
+       ====================================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        GRC
+      </div>
+
+      <div class="footer-copy">
+        © 2026 GetRightCollective. All Rights Reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ======================================
+       JAVASCRIPT
+       ====================================== -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("active");
+
+        });
+
+      });
+
+
+    /*
+      Close menu if user taps outside it.
+    */
+
+    document.addEventListener("click", (event) => {
+
+      if (
+        !navLinks.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+
+        navLinks.classList.remove("active");
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
